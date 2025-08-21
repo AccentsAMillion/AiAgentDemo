@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peakwave Digital Solutions - Members Area</title>
+    <meta name="description" content="Meet Sonora - The Voice of Your Business. Advanced AI voice agent by Peakwave Digital Solutions for inbound/outbound calls, customer service, and sales.">
+    <title>Sonora - AI Voice Agent | Peakwave Digital Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -11,28 +12,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="peakwave_logo.jpg" alt="Peakwave Digital Solutions" class="logo">
-                <span class="brand-text">Members Area</span>
+            <div class="nav-logo">
+                <img src="assets/peakwave_logo_large.jpg" alt="Peakwave Digital Solutions" class="logo">
             </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#dashboard" class="nav-link active" data-section="dashboard">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-                <a href="#integrations" class="nav-link" data-section="integrations">
-                    <i class="fas fa-plug"></i> Integrations
-                </a>
-                <a href="#logs" class="nav-link" data-section="logs">
-                    <i class="fas fa-list"></i> Activity Logs
-                </a>
-                <a href="#profile" class="nav-link" data-section="profile">
-                    <i class="fas fa-user"></i> Profile
-                </a>
-                <a href="#" class="nav-link" id="logoutBtn">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -40,322 +30,455 @@
         </div>
     </nav>
 
-    <!-- Login Form -->
-    <div class="login-container" id="loginContainer">
-        <div class="login-form">
-            <div class="login-header">
-                <img src="peakwave_logo.jpg" alt="Peakwave Digital Solutions" class="login-logo">
-                <h2>Members Area Login</h2>
-                <p>Access your AI voice agent integrations</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="assets/peakwave_hero_bg.png" alt="AI Technology Background" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/peakwave_logo_large.jpg" alt="Peakwave Digital Solutions" class="hero-logo-img">
             </div>
-            
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-sign-in-alt"></i> Login
+            <h1 class="hero-title">
+                Meet <span class="gradient-text">Sonora</span>
+            </h1>
+            <div class="typing-container">
+                <p class="typing-text" id="typingText">The most advanced AI voice agent ever built by Peakwave Digital Solutions</p>
+            </div>
+            <p class="hero-subtitle">
+                Handles objections, books calls, qualifies leads, and delivers value in real-time. Never miss another opportunity with your 24/7 AI voice agent.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('demo')">
+                    <i class="fas fa-play"></i> Try the Demo Now
                 </button>
-            </form>
-            
-            <div class="login-footer">
-                <p>Don't have an account? <a href="#" id="showRegister">Register here</a></p>
-                <p class="demo-credentials">
-                    <strong>Demo Account:</strong><br>
-                    Email: test@peakwave.com<br>
-                    Password: TestPassword123
-                </p>
+                <button class="btn btn-secondary" onclick="openBooking()">
+                    <i class="fas fa-calendar"></i> Book Strategy Call
+                </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Registration Form -->
-    <div class="login-container" id="registerContainer" style="display: none;">
-        <div class="login-form">
-            <div class="login-header">
-                <img src="peakwave_logo.jpg" alt="Peakwave Digital Solutions" class="login-logo">
-                <h2>Create Account</h2>
-                <p>Join Peakwave Digital Solutions</p>
-            </div>
-            
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="regFirstName">First Name</label>
-                    <input type="text" id="regFirstName" name="first_name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="regLastName">Last Name</label>
-                    <input type="text" id="regLastName" name="last_name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="regEmail">Email Address</label>
-                    <input type="email" id="regEmail" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="regPassword">Password</label>
-                    <input type="password" id="regPassword" name="password" required>
-                    <small>At least 8 characters with uppercase, lowercase, and number</small>
-                </div>
-                
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-user-plus"></i> Create Account
-                </button>
-            </form>
-            
-            <div class="login-footer">
-                <p>Already have an account? <a href="#" id="showLogin">Login here</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content" id="mainContent" style="display: none;">
-        
-        <!-- Dashboard Section -->
-        <section class="content-section active" id="dashboard">
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
             <div class="section-header">
-                <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
-                <p>Overview of your AI voice agent integrations</p>
+                <span class="badge">Experience Sonora in Action</span>
+                <h2>See how Sonora handles real conversations with the intelligence and warmth of your best employee</h2>
             </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-plug"></i>
+            <div class="demo-content">
+                <div class="demo-phone">
+                    <div class="phone-header">
+                        <div class="call-status">
+                            <div class="status-dot"></div>
+                            <span id="callType">Incoming Call</span>
+                        </div>
+                        <span class="demo-badge">Live Demo</span>
                     </div>
-                    <div class="stat-content">
-                        <h3 id="totalIntegrations">0</h3>
-                        <p>Active Integrations</p>
+                    <div class="phone-avatar">
+                        <img src="assets/sonora_avatar.png" alt="Sonora AI Avatar" class="avatar-img">
+                        <h3>Sonora</h3>
+                        <p>AI Voice Agent</p>
+                    </div>
+                    <div class="conversation-display" id="conversationDisplay">
+                        <div class="conversation-content">
+                            <i class="fas fa-phone conversation-icon"></i>
+                            <p class="conversation-text" id="conversationText">
+                                <strong>Sonora:</strong> "Hello, you've reached The Voice of Your Business — I'm Sonora. How can I help you today?"
+                            </p>
+                            <div class="sound-waves" id="soundWaves" style="display: none;">
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-notice" id="audioNotice" style="display: none;">
+                        <p>🎧 Full audio demo available - Book a call to hear Sonora's actual voice!</p>
+                    </div>
+                    <div class="demo-controls">
+                        <button class="btn btn-outline" onclick="toggleDemo()" id="playBtn">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <button class="btn btn-outline" onclick="switchDemo()">
+                            Switch Demo
+                        </button>
                     </div>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
+                <div class="demo-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Natural Conversation Flow</h3>
+                            <p>Sonora understands context, emotions, and intent to provide human-like responses.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Intelligent Responses</h3>
+                            <p>Trained on thousands of successful sales conversations and customer interactions.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Goal-Oriented</h3>
+                            <p>Every conversation is designed to move prospects closer to booking a call or making a purchase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">What Makes Sonora Unstoppable</span>
+                <h2>Built by Peakwave Digital Solutions with cutting-edge AI technology and years of sales expertise</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <div class="stat-content">
-                        <h3 id="totalCalls">0</h3>
-                        <p>Calls This Month</p>
-                    </div>
+                    <h3>24/7 Call Handling</h3>
+                    <p>Never miss a call again. Sonora answers every call with professionalism and warmth, day or night.</p>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-sms"></i>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="stat-content">
-                        <h3 id="totalMessages">0</h3>
-                        <p>Messages Sent</p>
-                    </div>
+                    <h3>Objection Mastery</h3>
+                    <p>Handles any objection with positivity, precision, and empathy — turning skeptics into customers.</p>
                 </div>
-                
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
                     </div>
-                    <div class="stat-content">
-                        <h3 id="successRate">98%</h3>
-                        <p>Success Rate</p>
-                    </div>
+                    <h3>Lead Qualification</h3>
+                    <p>Smart enough to guide conversations, qualify prospects, and identify hot leads instantly.</p>
                 </div>
-            </div>
-            
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-clock"></i> Recent Activity</h3>
-                    <div class="activity-list" id="recentActivity">
-                        <div class="activity-item">
-                            <i class="fas fa-info-circle text-blue"></i>
-                            <span>Welcome to your Peakwave Members Area</span>
-                            <small>Just now</small>
-                        </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
                     </div>
+                    <h3>CRM Integration</h3>
+                    <p>Fully integrated with your pipeline — books meetings, logs interactions, and triggers actions.</p>
                 </div>
-                
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-cog"></i> Quick Actions</h3>
-                    <div class="quick-actions">
-                        <button class="btn btn-outline" onclick="showSection('integrations')">
-                            <i class="fas fa-plus"></i> Add Integration
-                        </button>
-                        <button class="btn btn-outline" onclick="testAllIntegrations()">
-                            <i class="fas fa-vial"></i> Test Connections
-                        </button>
-                        <button class="btn btn-outline" onclick="showSection('logs')">
-                            <i class="fas fa-list"></i> View Logs
-                        </button>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <h3>Multi-Industry Expert</h3>
+                    <p>Works across all business sectors with industry-specific knowledge and terminology.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Human-Like Conversations</h3>
+                    <p>Emotionally intelligent responses that build trust and rapport with every caller.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Integrations Section -->
-        <section class="content-section" id="integrations">
+    <!-- Industry Solutions -->
+    <section class="industry-section">
+        <div class="container">
             <div class="section-header">
-                <h1><i class="fas fa-plug"></i> Integrations</h1>
-                <p>Manage your AI voice agent integrations</p>
-                <button class="btn btn-primary" id="addIntegrationBtn">
-                    <i class="fas fa-plus"></i> Add Integration
+                <span class="badge">Tailored for Every Business</span>
+                <h2>Sonora speaks your industry's language and understands your unique challenges</h2>
+            </div>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-emoji">🏠</div>
+                    <h3>Real Estate</h3>
+                    <p>Lead qualification, appointment booking, property inquiries</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-emoji">🏥</div>
+                    <h3>Healthcare</h3>
+                    <p>Appointment scheduling, patient support, insurance verification</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-emoji">🔧</div>
+                    <h3>Home Services</h3>
+                    <p>Service booking, emergency calls, quote requests</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-emoji">🛍️</div>
+                    <h3>Retail</h3>
+                    <p>Order processing, customer support, product inquiries</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-emoji">💼</div>
+                    <h3>Professional Services</h3>
+                    <p>Consultation booking, client screening, follow-ups</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-emoji">🍽️</div>
+                    <h3>Restaurants</h3>
+                    <p>Reservations, takeout orders, customer service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Simple, Transparent Pricing</span>
+                <h2>Choose the perfect plan for your business needs</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$297<span>/month</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Up to 500 calls/month</li>
+                        <li><i class="fas fa-check"></i> Basic CRM integration</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li><i class="fas fa-check"></i> Standard voice</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openBooking()">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">$597<span>/month</span></div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Up to 2,000 calls/month</li>
+                        <li><i class="fas fa-check"></i> Advanced CRM integration</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Custom voice training</li>
+                        <li><i class="fas fa-check"></i> Analytics dashboard</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking()">Get Started</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Unlimited calls</li>
+                        <li><i class="fas fa-check"></i> Full API access</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> White-label options</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="openBooking()">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Proven Results for Growing Businesses</span>
+                <h2>See what our clients are saying about their success with Sonora</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Sonora increased our lead conversion by 40% in the first month. It's like having our best salesperson working 24/7."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>Johnson Realty</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"We never miss emergency calls anymore. Sonora handles everything professionally and books appointments instantly."</p>
+                    <div class="testimonial-author">
+                        <strong>Mike Chen</strong>
+                        <span>Chen's Home Services</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Our patients love how easy it is to schedule appointments. Sonora understands medical terminology perfectly."</p>
+                    <div class="testimonial-author">
+                        <strong>Dr. Emily Rodriguez</strong>
+                        <span>Rodriguez Medical Practice</span>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Increase in Lead Conversion</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Availability</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Missed Calls</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Business Communications?</h2>
+            <p>Join hundreds of businesses already using Sonora to grow their revenue and improve customer satisfaction</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="openBooking()">
+                    <i class="fas fa-calendar"></i> Book Your Strategy Call
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('demo')">
+                    <i class="fas fa-play"></i> Try Demo First
                 </button>
             </div>
-            
-            <div class="integrations-grid" id="integrationsGrid">
-                <!-- Integration cards will be populated here -->
+            <div class="guarantees">
+                <div class="guarantee-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>No Setup Fees</span>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Quick 15-min Setup</span>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>30-Day Guarantee</span>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Activity Logs Section -->
-        <section class="content-section" id="logs">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
             <div class="section-header">
-                <h1><i class="fas fa-list"></i> Activity Logs</h1>
-                <p>Monitor webhook events and API calls</p>
-                <div class="log-filters">
-                    <select id="serviceFilter">
-                        <option value="">All Services</option>
-                        <option value="twilio">Twilio</option>
-                        <option value="gohighlevel">GoHighLevel</option>
-                        <option value="zapier">Zapier</option>
-                        <option value="make">Make.com</option>
-                    </select>
-                    <button class="btn btn-outline" onclick="loadLogs()">
-                        <i class="fas fa-refresh"></i> Refresh
-                    </button>
-                </div>
+                <span class="badge">Get in Touch</span>
+                <h2>Ready to get started? Contact us today</h2>
             </div>
-            
-            <div class="logs-container">
-                <div class="logs-table" id="logsTable">
-                    <!-- Logs will be populated here -->
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hello@peakwavedigital.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Innovation Drive<br>Tech City, TC 12345</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Profile Section -->
-        <section class="content-section" id="profile">
-            <div class="section-header">
-                <h1><i class="fas fa-user"></i> Profile</h1>
-                <p>Manage your account settings</p>
-            </div>
-            
-            <div class="profile-grid">
-                <div class="profile-card">
-                    <h3><i class="fas fa-user-edit"></i> Account Information</h3>
-                    <form id="profileForm">
+                <div class="contact-form">
+                    <form>
                         <div class="form-group">
-                            <label for="profileFirstName">First Name</label>
-                            <input type="text" id="profileFirstName" name="first_name">
+                            <input type="text" placeholder="Your Name" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="profileLastName">Last Name</label>
-                            <input type="text" id="profileLastName" name="last_name">
+                            <input type="email" placeholder="Your Email" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="profileEmail">Email Address</label>
-                            <input type="email" id="profileEmail" name="email" readonly>
+                            <input type="tel" placeholder="Your Phone">
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i> Update Profile
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="profile-card">
-                    <h3><i class="fas fa-lock"></i> Change Password</h3>
-                    <form id="passwordForm">
                         <div class="form-group">
-                            <label for="currentPassword">Current Password</label>
-                            <input type="password" id="currentPassword" name="current_password" required>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="newPassword">New Password</label>
-                            <input type="password" id="newPassword" name="new_password" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="confirmPassword">Confirm New Password</label>
-                            <input type="password" id="confirmPassword" name="confirm_password" required>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-key"></i> Change Password
-                        </button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Integration Modal -->
-    <div class="modal" id="integrationModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Add Integration</h3>
-                <button class="modal-close" id="closeModal">&times;</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/peakwave_logo_large.jpg" alt="Peakwave Digital Solutions" class="footer-logo">
+                    <p>Empowering businesses with advanced AI voice technology. Sonora is just the beginning of what's possible.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
             </div>
-            
-            <form id="integrationForm">
-                <input type="hidden" id="integrationId" name="id">
-                
-                <div class="form-group">
-                    <label for="serviceName">Service</label>
-                    <select id="serviceName" name="service_name" required>
-                        <option value="">Select a service</option>
-                        <option value="twilio">Twilio</option>
-                        <option value="gohighlevel">GoHighLevel</option>
-                        <option value="zapier">Zapier</option>
-                        <option value="make">Make.com</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="displayName">Display Name</label>
-                    <input type="text" id="displayName" name="display_name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="webhookUrl">Webhook URL</label>
-                    <input type="url" id="webhookUrl" name="webhook_url">
-                    <small>For Zapier and Make.com integrations</small>
-                </div>
-                
-                <div class="service-config" id="serviceConfig">
-                    <!-- Service-specific configuration will be populated here -->
-                </div>
-                
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-outline" id="cancelModal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Save Integration
-                    </button>
-                </div>
-            </form>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Peakwave Digital Solutions — All rights reserved.</p>
+            </div>
         </div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <i class="fas fa-spinner fa-spin"></i>
-            <p>Loading...</p>
-        </div>
-    </div>
-
-    <!-- Toast Notifications -->
-    <div class="toast-container" id="toastContainer"></div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
